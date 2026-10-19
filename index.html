@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miriam George | Operations & Data</title>
+<meta name="description" content="Miriam George — Operations & Data Coordinator in Dubai. Power BI dashboards, workflow automation, CRM, procurement and process improvement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E00800; --red-dark:#B30600; --red-soft:#FDECEB;
+    --ink:#111111; --ink-2:#3A3A3A; --muted:#6B6B6B;
+    --line:#E6E6E6; --bg:#FFFFFF; --bg-alt:#F6F6F6;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .mark{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em}
+  .mark span{width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:14px}
+  .links{display:flex;gap:28px;font-size:14px;font-weight:600;color:var(--ink-2)}
+  .links a:hover{color:var(--red)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:14px;transition:.2s}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-dark)}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;padding:96px 0 80px}
+  .hero::after{content:"";position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;background:var(--red);opacity:.95}
+  .hero::before{content:"";position:absolute;right:120px;bottom:-200px;width:300px;height:300px;border-radius:50%;border:40px solid var(--red-soft)}
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+  h1{font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.04em;font-weight:800;max-width:720px}
+  h1 em{font-style:normal;color:var(--red)}
+  .lede{margin-top:24px;font-size:19px;color:var(--ink-2);max-width:600px}
+  .hero .ctas{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .tracks{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px}
+  .tracks span{font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--bg-alt);border:1px solid var(--line)}
+
+  /* STATS */
+  .stats{background:var(--ink);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
+  .stat{padding:34px 20px;border-left:1px solid #2a2a2a}
+  .stat:first-child{border-left:none}
+  .stat b{display:block;font-size:40px;font-weight:800;letter-spacing:-.03em;color:#fff}
+  .stat b i{font-style:normal;color:var(--red)}
+  .stat small{font-size:13px;color:#BDBDBD}
+
+  /* SECTIONS */
+  section{padding:96px 0}
+  .alt{background:var(--bg-alt)}
+  .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+  h2{font-size:clamp(30px,4.5vw,44px);letter-spacing:-.03em;line-height:1.1;font-weight:800}
+  h2 .dot{color:var(--red)}
+  .head p{max-width:420px;color:var(--muted)}
+
+  /* PROJECTS */
+  .projects{display:grid;gap:24px}
+  .proj{display:grid;grid-template-columns:1.05fr 1fr;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s}
+  .proj:hover{box-shadow:0 20px 50px -24px rgba(0,0,0,.25);transform:translateY(-2px)}
+  .proj-body{padding:40px}
+  .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+  .proj h3{font-size:26px;letter-spacing:-.02em;line-height:1.2;margin-bottom:14px}
+  .proj p{color:var(--ink-2);margin-bottom:18px}
+  .proj ul{list-style:none;display:grid;gap:10px;margin-bottom:22px}
+  .proj li{position:relative;padding-left:22px;font-size:15px;color:var(--ink-2)}
+  .proj li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--red)}
+  .tools{display:flex;flex-wrap:wrap;gap:8px}
+  .tools span{font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--red-soft);color:var(--red-dark)}
+
+  /* dashboard previews (stylised, no real data) */
+  .preview{background:var(--ink);padding:32px;display:flex;align-items:center;justify-content:center;position:relative}
+  .screen{width:100%;max-width:420px;background:#1c1c1c;border-radius:12px;padding:14px;border:1px solid #2c2c2c}
+  .bar-top{display:flex;gap:6px;margin-bottom:12px}
+  .bar-top i{width:9px;height:9px;border-radius:50%;background:#3a3a3a}
+  .tabs{display:flex;gap:6px;margin-bottom:12px}
+  .tabs span{font-size:10px;font-weight:700;color:#aaa;padding:5px 9px;border-radius:6px;background:#262626}
+  .tabs span.on{background:var(--red);color:#fff}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+  .kpi{background:#262626;border-radius:8px;padding:10px}
+  .kpi b{display:block;color:#fff;font-size:18px;font-weight:800}
+  .kpi small{font-size:9px;color:#9a9a9a;text-transform:uppercase;letter-spacing:.06em}
+  .chart{background:#262626;border-radius:8px;height:110px;padding:12px;display:flex;align-items:flex-end;gap:7px}
+  .chart i{flex:1;background:#4a4a4a;border-radius:4px 4px 0 0}
+  .chart i.r{background:var(--red)}
+  .grid-cells{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;background:#262626;border-radius:8px;padding:10px}
+  .grid-cells i{aspect-ratio:1;border-radius:3px;background:#3a3a3a}
+  .grid-cells i.r{background:var(--red)} .grid-cells i.m{background:#7a7a7a}
+  .flow{display:flex;align-items:center;justify-content:space-between;gap:6px;background:#262626;border-radius:8px;padding:16px 10px}
+  .node{flex:1;text-align:center;font-size:10px;font-weight:700;color:#fff;background:#333;border-radius:8px;padding:10px 4px}
+  .node.r{background:var(--red)}
+  .arrow{color:var(--red);font-weight:800}
+  .rows{display:grid;gap:6px;margin-top:10px}
+  .rows i{display:block;height:10px;border-radius:4px;background:#333}
+  .preview-note{position:absolute;bottom:10px;right:14px;font-size:10px;color:#777}
+
+  .proj.flip{grid-template-columns:1fr 1.05fr}
+  .proj.flip .preview{order:-1}
+
+  /* EXPERIENCE */
+  .timeline{display:grid;gap:20px}
+  .job{display:grid;grid-template-columns:220px 1fr;gap:32px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px}
+  .job .when{font-weight:800;color:var(--red);font-size:14px}
+  .job .where{font-size:14px;color:var(--muted);margin-top:4px}
+  .job h3{font-size:22px;letter-spacing:-.02em;margin-bottom:12px}
+  .job ul{list-style:none;display:grid;gap:8px}
+  .job li{position:relative;padding-left:20px;color:var(--ink-2);font-size:15px}
+  .job li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--red)}
+
+  /* SKILLS */
+  .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .skill{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;border-top:4px solid var(--red)}
+  .skill h3{font-size:18px;margin-bottom:14px;letter-spacing:-.01em}
+  .skill p{font-size:14px;color:var(--ink-2)}
+
+  /* EDUCATION */
+  .edu{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .card .k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+  .card h3{font-size:19px;letter-spacing:-.01em;margin-bottom:6px;line-height:1.3}
+  .card p{font-size:14px;color:var(--muted)}
+
+  /* CONTACT */
+  .contact{background:var(--red);color:#fff;position:relative;overflow:hidden}
+  .contact::after{content:"";position:absolute;left:-120px;bottom:-200px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,255,255,.12)}
+  .contact .wrap{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+  .contact h2{color:#fff;max-width:560px}
+  .contact p{margin-top:14px;opacity:.9;max-width:520px}
+  .contact .btn{background:#fff;color:var(--red)}
+  .contact .btn:hover{background:var(--ink);color:#fff}
+  .contact .langs{margin-top:20px;font-size:14px;opacity:.85}
+  footer{background:var(--ink);color:#999;font-size:13px;padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media (max-width:900px){
+    .links{display:none}
+    .stats .wrap{grid-template-columns:repeat(2,1fr)}
+    .stat{border-left:none;border-top:1px solid #2a2a2a}
+    .proj,.proj.flip{grid-template-columns:1fr}
+    .proj.flip .preview{order:0}
+    .job{grid-template-columns:1fr;gap:12px}
+    .skills{grid-template-columns:1fr 1fr}
+    .edu{grid-template-columns:1fr}
+    .hero::after{width:260px;height:260px;right:-170px;top:-150px}
+    .hero{padding-top:72px}
+  }
+  @media (max-width:560px){
+    section{padding:72px 0}
+    .proj-body,.job{padding:26px}
+    .skills{grid-template-columns:1fr}
+    .stat b{font-size:32px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="mark"><span>MG</span>Miriam George</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+    </div>
+    <a href="#contact" class="btn btn-red">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Operations & Data &middot; Dubai, UAE</div>
+    <h1>I turn scattered data into <em>decisions</em> teams can act on.</h1>
+    <p class="lede">Operations and data coordinator with an MBA in Service Operations &amp; Marketing. I build live Power BI dashboards, automate the workflows behind them, and keep CRM, procurement and service processes moving across teams.</p>
+    <div class="ctas">
+      <a href="#projects" class="btn btn-red">View my projects &rarr;</a>
+      <a href="#contact" class="btn btn-ghost">Contact me</a>
+    </div>
+    <div class="tracks">
+      <span>Data &amp; Reporting</span>
+      <span>Supply Chain &amp; Procurement</span>
+      <span>CRM &amp; Sales Operations</span>
+      <span>Process Improvement</span>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>3<i>.</i></b><small>Live Power BI dashboards</small></div>
+    <div class="stat"><b>5<i>.</i></b><small>MEA countries covered</small></div>
+    <div class="stat"><b>11<i>.</i></b><small>Oman sites tracked</small></div>
+    <div class="stat"><b>121<i>.</i></b><small>Service tags reported</small></div>
+    <div class="stat"><b>25<i>.</i></b><small>Technicians skills-mapped</small></div>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="head">
+      <h2>Key projects<span class="dot">.</span></h2>
+      <p>Built at Emerson Lifecycle Services MEA. Previews are stylised illustrations; client data stays confidential.</p>
+    </div>
+
+    <div class="projects">
+      <article class="proj">
+        <div class="proj-body">
+          <div class="tag">Power BI &middot; Automation &middot; FY26</div>
+          <h3>ASP Training Live Status Dashboard</h3>
+          <p>A three-page live dashboard tracking technician training registrations across South Africa, Bahrain, Qatar, Kuwait and the Republic of Congo, for five course types.</p>
+          <ul>
+            <li>Modelled three SharePoint lists and an Excel skills matrix in Power Query, cleaning and unpivoting the data into one reliable model.</li>
+            <li>Mapped competencies for 25 technicians across three locations, surfacing zero-proficiency gaps in three skill areas.</li>
+            <li>Automated registrations end to end from Microsoft Forms through Power Automate into SharePoint, fixing broken mappings and recovering failed runs.</li>
+            <li>Published with role-based access in Power BI Service for the regional team.</li>
+          </ul>
+          <div class="tools"><span>Power BI</span><span>Power Query</span><span>SharePoint</span><span>Power Automate</span><span>MS Forms</span></div>
+        </div>
+        <div class="preview">
+          <div class="screen">
+            <div class="bar-top"><i></i><i></i><i></i></div>
+            <div class="tabs"><span class="on">Registration Status</span><span>Skills Matrix</span><span>History</span></div>
+            <div class="kpis">
+              <div class="kpi"><b>5</b><small>Countries</small></div>
+              <div class="kpi"><b>5</b><small>Courses</small></div>
+              <div class="kpi"><b>25</b><small>Technicians</small></div>
+            </div>
+            <div class="grid-cells">
+              <i class="r"></i><i></i><i class="m"></i><i></i><i class="r"></i><i></i><i class="m"></i><i></i>
+              <i></i><i class="m"></i><i></i><i class="r"></i><i></i><i class="m"></i><i></i><i class="r"></i>
+              <i class="m"></i><i></i><i class="r"></i><i></i><i class="m"></i><i></i><i class="r"></i><i></i>
+            </div>
+          </div>
+          <span class="preview-note">Illustration</span>
+        </div>
+      </article>
+
+      <article class="proj flip">
+        <div class="proj-body">
+          <div class="tag">Power BI &middot; DAX &middot; FY26</div>
+          <h3>OQGN VCM Report &amp; Billing Tracker</h3>
+          <p>A reporting and billing tracker for the Reliability team, bringing site-level service and billing status into a single view.</p>
+          <ul>
+            <li>Covers 11 Oman sites and 121 service tags for FY26.</li>
+            <li>Wrote DAX measures and Power Query transformations to consolidate site data, replacing manual spreadsheet tracking.</li>
+            <li>Made service progress and billing follow-up easy to track by site.</li>
+          </ul>
+          <div class="tools"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Excel</span></div>
+        </div>
+        <div class="preview">
+          <div class="screen">
+            <div class="bar-top"><i></i><i></i><i></i></div>
+            <div class="tabs"><span class="on">Report</span><span>Billing Tracker</span></div>
+            <div class="kpis">
+              <div class="kpi"><b>11</b><small>Sites</small></div>
+              <div class="kpi"><b>121</b><small>Service tags</small></div>
+              <div class="kpi"><b>FY26</b><small>Period</small></div>
+            </div>
+            <div class="chart">
+              <i style="height:55%"></i><i class="r" style="height:80%"></i><i style="height:40%"></i><i style="height:65%"></i><i class="r" style="height:90%"></i><i style="height:50%"></i><i style="height:70%"></i><i class="r" style="height:60%"></i><i style="height:45%"></i><i style="height:75%"></i><i style="height:58%"></i>
+            </div>
+          </div>
+          <span class="preview-note">Illustration</span>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-body">
+          <div class="tag">Power BI &middot; Service Operations</div>
+          <h3>Service Details Dashboard</h3>
+          <p>A live dashboard giving the service team one view of service job details and status, used alongside Salesforce service request tracking.</p>
+          <ul>
+            <li>Replaced status-chasing with a single, always-current view.</li>
+            <li>Supported day-to-day follow-up and SLA-focused reporting.</li>
+          </ul>
+          <div class="tools"><span>Power BI</span><span>Excel</span><span>Salesforce CRM</span></div>
+        </div>
+        <div class="preview">
+          <div class="screen">
+            <div class="bar-top"><i></i><i></i><i></i></div>
+            <div class="flow">
+              <div class="node">Forms</div><span class="arrow">&rarr;</span>
+              <div class="node">Automate</div><span class="arrow">&rarr;</span>
+              <div class="node">SharePoint</div><span class="arrow">&rarr;</span>
+              <div class="node r">Power BI</div>
+            </div>
+            <div class="rows"><i style="width:92%"></i><i style="width:76%"></i><i style="width:84%"></i><i style="width:60%"></i></div>
+          </div>
+          <span class="preview-note">Illustration</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="experience">
+  <div class="wrap">
+    <div class="head"><h2>Experience<span class="dot">.</span></h2></div>
+    <div class="timeline">
+      <div class="job">
+        <div><div class="when">Aug 2025 – Jul 2026</div><div class="where">Emerson, Lifecycle Services MEA (Flow Control), Dubai</div></div>
+        <div>
+          <h3>Education Services Coordinator</h3>
+          <ul>
+            <li>Designed and deployed three live Power BI dashboards and the automated data flows behind them.</li>
+            <li>Tracked leads and service requests in Salesforce CRM against SLA timelines, flagging at-risk items to service managers.</li>
+            <li>Covered procurement: raised purchase orders, kept a daily PO tracker, and resolved price and quality issues with suppliers.</li>
+            <li>Analysed PO and supplier data to pinpoint recurring delivery delays and set follow-up priorities.</li>
+            <li>Coordinated training schedules and records for technicians across five MEA countries; authored TechBriefs and co-authored the team newsletter.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div><div class="when">Mar 2025 – Aug 2025</div><div class="where">Digitizer Marketing Management, Dubai</div></div>
+        <div>
+          <h3>Sales Operations &amp; Marketing</h3>
+          <ul>
+            <li>Prepared weekly sales and campaign performance reports for account and management teams.</li>
+            <li>Tracked leads and sales activity in CRM, keeping pipeline records current.</li>
+            <li>Supported events and launch campaigns, including campaigns for the Giordano brand.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="head"><h2>What I bring<span class="dot">.</span></h2><p>Four tracks, one way of working: get the data right, then make the process run on it.</p></div>
+    <div class="skills">
+      <div class="skill"><h3>Data &amp; Reporting</h3><p>Power BI, DAX, Power Query, data modelling, Row-Level Security, KPI reporting, advanced Excel. Developing SQL and Python.</p></div>
+      <div class="skill"><h3>Supply Chain &amp; Procurement</h3><p>PO management, supplier expediting, delivery delay analysis, price and quality resolution, Oracle and SAP.</p></div>
+      <div class="skill"><h3>CRM &amp; Sales Ops</h3><p>Salesforce CRM, lead and service request tracking, pipeline maintenance, sales and campaign reporting.</p></div>
+      <div class="skill"><h3>Process Improvement</h3><p>SLA tracking, workflow automation with Power Automate and SharePoint, Lean and Six Sigma principles, stakeholder coordination.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="education">
+  <div class="wrap">
+    <div class="head"><h2>Education &amp; certifications<span class="dot">.</span></h2></div>
+    <div class="edu">
+      <div class="card" style="background:#fff"><div class="k">MBA</div><h3>Service Operations &amp; Marketing</h3><p>Manipal Academy of Higher Education, Dubai &middot; Exchange semester at MILA University, Malaysia</p></div>
+      <div class="card" style="background:#fff"><div class="k">BBA</div><h3>International Business, Economics and Supply Chain Management</h3><p>Madonna University</p></div>
+      <div class="card" style="background:#fff"><div class="k">Certificate</div><h3>Google Data Analytics Professional Certificate</h3><p>Google / Coursera</p></div>
+      <div class="card" style="background:#fff"><div class="k">Certificate</div><h3>One Million Prompters: AI Prompt Engineering</h3><p>Dubai Future Foundation &amp; Dubai Centre for Artificial Intelligence</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Let's build something that runs better.</h2>
+      <p>Open to coordinator, analyst, procurement and operations roles in the UAE.</p>
+      <div class="langs">English (Professional) &middot; Hindi (Intermediate) &middot; Arabic (Beginner)</div>
+    </div>
+    <a href="mailto:geomiriam@outlook.com" class="btn">geomiriam@outlook.com &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>&copy; 2026 Miriam George</span><span>Dubai, UAE</span></div>
+</footer>
+
+</body>
+</html>
